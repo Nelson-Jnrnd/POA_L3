@@ -2,8 +2,13 @@
 #define POA_L3_BOAT_HPP
 
 
-class Boat {
+#include "Container.hpp"
 
+class Boat : public Container {
+public:
+    Boat(const std::string &name);
+private:
+    const static unsigned MAX_PASSENGERS = 2;
 };
 
 

@@ -9,9 +9,13 @@
 #include <Headers/Person.hpp>
 
 class Constraint {
-    public:
-        virtual bool isRespected(const std::list<const Person*> &people) const = 0;
-        bool isRespected(const std::list<const Person*> &people, const Person &person) const;
+public:
+    virtual bool isRespected(const std::list<const Person *> &people) const = 0;
+
+    bool isRespected(const std::list<const Person *> &people, const Person &person) const;
+
+protected:
+    Constraint() = default;
 };
 
 

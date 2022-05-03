@@ -14,6 +14,7 @@
  */
 class Bank : public Container {
 public:
+    Bank(const std::string &name);
     Bank(const std::string &name, const std::list<const Person*> people);
 };
 

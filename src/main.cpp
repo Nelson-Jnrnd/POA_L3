@@ -3,11 +3,21 @@
 #include "Headers/Ruleset.hpp"
 #include "Headers/Bank.hpp"
 
+using std::endl;
+using std::cout;
+
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    cout << "Create Rive gauche with people" << endl;
 
     Bank bank("Rive gauche", Ruleset::getPersons());
 
+    cout << "Create Rive droite empty" << endl;
 
-    return 0;
+    Bank bank2("Rive droite");
+
+    cout << "Create bateau" << endl;
+
+
+
+    return EXIT_SUCCESS; // TODO pas oublier de mettre ça dans la dernière version
 }

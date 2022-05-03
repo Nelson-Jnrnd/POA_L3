@@ -9,6 +9,7 @@
 #include "Headers/Adult.hpp"
 
 std::list<const Constraint *> Ruleset::getConstraints() {
+    static std::list<const Constraint *> constraints = {};
     return {};
 }
 

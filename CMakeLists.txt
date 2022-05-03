@@ -20,5 +20,5 @@ add_executable(POA_L3
         src/Adult.cpp
         src/Headers/Adult.hpp
         src/Ruleset.cpp
-        src/Headers/Ruleset.hpp)
+        src/Headers/Ruleset.hpp src/Headers/BoyNotAloneWithMother.cpp src/Headers/BoyNotAloneWithMother.hpp)
 
