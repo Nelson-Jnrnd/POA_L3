@@ -24,6 +24,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="D:/prog/heigVD_2021/POA/POA_L3/src"/>
 					<Add directory="p:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
 					<Add directory="p:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
 					<Add directory="p:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
@@ -45,6 +46,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="D:/prog/heigVD_2021/POA/POA_L3/src"/>
 					<Add directory="p:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
 					<Add directory="p:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
 					<Add directory="p:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
@@ -80,7 +82,49 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/prog/heigVD_2021/POA/POA_L3/main.cpp">
+		<Unit filename="D:/prog/heigVD_2021/POA/POA_L3/src/Adult.cpp">
+			<Option target="POA_L3"/>
+		</Unit>
+		<Unit filename="D:/prog/heigVD_2021/POA/POA_L3/src/Bank.cpp">
+			<Option target="POA_L3"/>
+		</Unit>
+		<Unit filename="D:/prog/heigVD_2021/POA/POA_L3/src/Boat.cpp">
+			<Option target="POA_L3"/>
+		</Unit>
+		<Unit filename="D:/prog/heigVD_2021/POA/POA_L3/src/Container.cpp">
+			<Option target="POA_L3"/>
+		</Unit>
+		<Unit filename="D:/prog/heigVD_2021/POA/POA_L3/src/Controller.cpp">
+			<Option target="POA_L3"/>
+		</Unit>
+		<Unit filename="D:/prog/heigVD_2021/POA/POA_L3/src/Headers/Adult.hpp">
+			<Option target="POA_L3"/>
+		</Unit>
+		<Unit filename="D:/prog/heigVD_2021/POA/POA_L3/src/Headers/Bank.hpp">
+			<Option target="POA_L3"/>
+		</Unit>
+		<Unit filename="D:/prog/heigVD_2021/POA/POA_L3/src/Headers/Boat.hpp">
+			<Option target="POA_L3"/>
+		</Unit>
+		<Unit filename="D:/prog/heigVD_2021/POA/POA_L3/src/Headers/Container.hpp">
+			<Option target="POA_L3"/>
+		</Unit>
+		<Unit filename="D:/prog/heigVD_2021/POA/POA_L3/src/Headers/Controller.hpp">
+			<Option target="POA_L3"/>
+		</Unit>
+		<Unit filename="D:/prog/heigVD_2021/POA/POA_L3/src/Headers/Person.hpp">
+			<Option target="POA_L3"/>
+		</Unit>
+		<Unit filename="D:/prog/heigVD_2021/POA/POA_L3/src/Headers/Ruleset.hpp">
+			<Option target="POA_L3"/>
+		</Unit>
+		<Unit filename="D:/prog/heigVD_2021/POA/POA_L3/src/Person.cpp">
+			<Option target="POA_L3"/>
+		</Unit>
+		<Unit filename="D:/prog/heigVD_2021/POA/POA_L3/src/Ruleset.cpp">
+			<Option target="POA_L3"/>
+		</Unit>
+		<Unit filename="D:/prog/heigVD_2021/POA/POA_L3/src/main.cpp">
 			<Option target="POA_L3"/>
 		</Unit>
 		<Unit filename="D:/prog/heigVD_2021/POA/POA_L3/CMakeLists.txt">

@@ -1,35 +1,4 @@
-C:\Users\André\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/Users/André/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/ninja/win/ninja.exe "-DCMAKE_C_FLAGS=-Wall -Wextra -Wconversion -Wsign-conversion -pedantic" -G Ninja C:\Heig-vd\POA\POA_L3
-CMake Error: Parse error in cache file C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt on line 2. Offending entry: <<<<<<< HEAD
-CMake Error: Parse error in cache file C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt on line 8. Offending entry: >>>>>>> e23cb990332b45d70cb3df25722424237d42dd06
-CMake Error: Parse error in cache file C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt on line 23. Offending entry: <<<<<<< HEAD
-CMake Error: Parse error in cache file C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt on line 33. Offending entry: >>>>>>> e23cb990332b45d70cb3df25722424237d42dd06
-CMake Error: Parse error in cache file C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt on line 39. Offending entry: <<<<<<< HEAD
-CMake Error: Parse error in cache file C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt on line 75. Offending entry: >>>>>>> e23cb990332b45d70cb3df25722424237d42dd06
-CMake Error: Parse error in cache file C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt on line 96. Offending entry: <<<<<<< HEAD
-CMake Error: Parse error in cache file C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt on line 122. Offending entry: >>>>>>> e23cb990332b45d70cb3df25722424237d42dd06
-CMake Error: Parse error in cache file C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt on line 140. Offending entry: <<<<<<< HEAD
-CMake Error: Parse error in cache file C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt on line 144. Offending entry: >>>>>>> e23cb990332b45d70cb3df25722424237d42dd06
-CMake Error: Parse error in cache file C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt on line 161. Offending entry: <<<<<<< HEAD
-CMake Error: Parse error in cache file C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt on line 166. Offending entry: >>>>>>> e23cb990332b45d70cb3df25722424237d42dd06
-CMake Error: Parse error in cache file C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt on line 174. Offending entry: <<<<<<< HEAD
-CMake Error: Parse error in cache file C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt on line 184. Offending entry: >>>>>>> e23cb990332b45d70cb3df25722424237d42dd06
-CMake Error: Parse error in cache file C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt on line 207. Offending entry: <<<<<<< HEAD
-CMake Error: Parse error in cache file C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt on line 223. Offending entry: >>>>>>> e23cb990332b45d70cb3df25722424237d42dd06
-CMake Error: Parse error in cache file C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt on line 235. Offending entry: <<<<<<< HEAD
-CMake Error: Parse error in cache file C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt on line 245. Offending entry: >>>>>>> e23cb990332b45d70cb3df25722424237d42dd06
-CMake Error: Parse error in cache file C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt on line 263. Offending entry: <<<<<<< HEAD
-CMake Error: Parse error in cache file C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt on line 267. Offending entry: >>>>>>> e23cb990332b45d70cb3df25722424237d42dd06
-CMake Error: Parse error in cache file C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt on line 317. Offending entry: <<<<<<< HEAD
-CMake Error: Parse error in cache file C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt on line 321. Offending entry: >>>>>>> e23cb990332b45d70cb3df25722424237d42dd06
-CMake Error: Parse error in cache file C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt on line 330. Offending entry: <<<<<<< HEAD
-CMake Error: Parse error in cache file C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt on line 343. Offending entry: >>>>>>> e23cb990332b45d70cb3df25722424237d42dd06
-CMake Error: Parse error in cache file C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt on line 355. Offending entry: <<<<<<< HEAD
-CMake Error: Parse error in cache file C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt on line 385. Offending entry: >>>>>>> e23cb990332b45d70cb3df25722424237d42dd06
-CMake Error: Parse error in cache file C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt on line 436. Offending entry: <<<<<<< HEAD
-CMake Error: Parse error in cache file C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt on line 456. Offending entry: >>>>>>> e23cb990332b45d70cb3df25722424237d42dd06
-CMake Error: Parse error in cache file C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt on line 465. Offending entry: <<<<<<< HEAD
-CMake Error: Parse error in cache file C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt on line 475. Offending entry: >>>>>>> e23cb990332b45d70cb3df25722424237d42dd06
-CMake Error: Parse error in cache file C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt on line 514. Offending entry: <<<<<<< HEAD
-CMake Error: Parse error in cache file C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt on line 518. Offending entry: >>>>>>> e23cb990332b45d70cb3df25722424237d42dd06
-CMake Error: The current CMakeCache.txt directory C:/Heig-vd/POA/POA_L3/cmake-build-debug/CMakeCache.txt is different than the directory d:/prog/heigVD_2021/POA/POA_L3/cmake-build-debug where CMakeCache.txt was created. This may result in binaries being created in the wrong place. If you are not sure, reedit the CMakeCache.txt
-CMake Error: The source "C:/Heig-vd/POA/POA_L3/CMakeLists.txt" does not match the source "D:/prog/heigVD_2021/POA/POA_L3/CMakeLists.txt" used to generate cache.  Re-run cmake with a different source directory.
+"P:\CLion 2022.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S D:\prog\heigVD_2021\POA\POA_L3 -B D:\prog\heigVD_2021\POA\POA_L3\cmake-build-debug
+-- Configuring done
+-- Generating done
+-- Build files have been written to: D:/prog/heigVD_2021/POA/POA_L3/cmake-build-debug
