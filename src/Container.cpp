@@ -39,3 +39,19 @@ bool Container::canArrive(const Person& person) const {
     }
     return true;
 }
+
+void Container::leave(const Person &person) {
+    if (!canLeave(person)) {
+        throw std::invalid_argument("Combination of constraints and people is not possible");
+    }
+    this->peopleInContainer.remove(&person);
+}
+
+bool Container::canLeave(const Person &person) const {
+    for (const Constraint* constraint : CONSTRAINTS) {
+        /*if (!constraint->isRespected(this->peopleInContainer, person)) {
+            return false;
+        }*/
+    }
+    return true;
+}
