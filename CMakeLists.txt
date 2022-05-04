@@ -20,5 +20,7 @@ add_executable(POA_L3
         src/Adult.cpp
         src/Headers/Adult.hpp
         src/Ruleset.cpp
-        src/Headers/Ruleset.hpp src/Headers/BoyNotAloneWithMother.cpp src/Headers/BoyNotAloneWithMother.hpp src/Headers/IPersonVisitor.hpp src/Child.cpp src/Headers/Child.hpp)
+        src/Headers/Ruleset.hpp
+        src/Child.cpp
+        src/Headers/Child.hpp src/Headers/ConsoleInterface.cpp src/Headers/ConsoleInterface.hpp)
 

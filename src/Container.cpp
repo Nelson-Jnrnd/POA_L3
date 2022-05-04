@@ -61,3 +61,11 @@ bool Container::canLeave(const Person &person) const {
 bool Container::isHere(const Person &person) const {
     return std::find(this->peopleInContainer.begin(), this->peopleInContainer.end(), &person) != this->peopleInContainer.end();
 }
+
+std::string Container::getName() const {
+    return this->NAME;
+}
+
+std::list<const Person *> Container::getPeople() const {
+    return this->peopleInContainer;
+}

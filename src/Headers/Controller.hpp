@@ -13,6 +13,13 @@ public:
     void start();
 
     void move(const std::string& name);
+    void moveBoat();
+
+    const Boat &getBoat() const;
+
+    const Bank &getLeftBank() const;
+
+    const Bank &getRightBank() const;
 private:
     static const std::list<const Person*> peopleInGame;
     Boat boat;

@@ -38,6 +38,22 @@ void Controller::start() {
         move("alicia");
         std::cout << "Embarking with nina" << std::endl;
         move("nina");
+
+        std::cout << "Disembarking with alicia" << std::endl;
+        move("alicia");
+
+        std::cout << "Disembarking with nina" << std::endl;
+        move("nina");
+
+        std::cout << "Embarking with arthur" << std::endl;
+        move("arthur");
+
+        std::cout << "Moving boat" << std::endl;
+        moveBoat();
+
+        std::cout << "Disembarking with arthur" << std::endl;
+        move("arthur");
+
         break;
     }
 }
@@ -105,5 +121,21 @@ const Person *Controller::findPerson(const std::string &name) const {
         }
     }
     return nullptr;
+}
+
+void Controller::moveBoat() {
+    boat.move(&boat.getPosition() == &leftBank ? rightBank : leftBank);
+}
+
+const Boat &Controller::getBoat() const {
+    return boat;
+}
+
+const Bank &Controller::getLeftBank() const {
+    return leftBank;
+}
+
+const Bank &Controller::getRightBank() const {
+    return rightBank;
 }
 

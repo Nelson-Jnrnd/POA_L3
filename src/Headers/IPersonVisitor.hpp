@@ -19,6 +19,7 @@ class IPersonVisitor {
     public:
     virtual ~IPersonVisitor() = default;
     virtual void visit(const Adult &adult) = 0;
+    virtual void visit(const Child &child) = 0;
 };
 
 
