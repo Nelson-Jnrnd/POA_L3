@@ -2,10 +2,14 @@
 #include "Headers/Adult.hpp"
 
 #include <iostream>
+#include <algorithm>
+
 using std::cout;
+using std::find;
+
 
 // TODO à modifier, grégoire va pleurer s'il voit ça
-const std::list<const Person*> Controller::peopleInGame = [] {
+const std::list<const Person *> Controller::peopleInGame = [] {
 
     static Adult alicia("alicia");
     static Adult mike("mike");
@@ -13,7 +17,7 @@ const std::list<const Person*> Controller::peopleInGame = [] {
     static Child nina = Adult::makeChild(alicia, mike, "nina");
     static Child arthur = Adult::makeChild(alicia, mike, "arthur");
 
-    std::list<const Person*> people;
+    std::list<const Person *> people;
     people.push_back(&alicia);
     people.push_back(&mike);
     people.push_back(&isaac);
@@ -25,11 +29,81 @@ const std::list<const Person*> Controller::peopleInGame = [] {
 Controller::Controller() :
         leftBank("leftBank", peopleInGame),
         rightBank("rightBank"),
-        boat("boat") {}
+        boat("boat", leftBank) {}
 
 void Controller::start() {
     while (true) {
         std::cout << "Welcome to the game.\n";
+        std::cout << "Embarking with alicia" << std::endl;
+        move("alicia");
+        std::cout << "Embarking with nina" << std::endl;
+        move("nina");
         break;
     }
 }
+
+void Controller::move(const std::string &name) {
+    const Person* personToMove = findPerson(name);
+
+    if(personToMove == nullptr) {
+        throw std::invalid_argument("Person not found");
+    } else {
+        move(*personToMove);
+    }
+}
+
+void Controller::move(const Person &person) {
+    Bank *location = getBank(person);
+    if (location != nullptr) {
+        embark(person, *location);
+    } else {
+        disembark(person);
+    }
+}
+
+Bank *Controller::getBank(const Person &person) {
+    if (leftBank.isHere(person)) {
+        return &leftBank;
+    } else if (rightBank.isHere(person)) {
+        return &rightBank;
+    } else {
+        return nullptr;
+    }
+}
+
+void Controller::embark(const Person &person, Bank &bank) {
+    if (bank.isHere(person)) {
+        if (&boat.getPosition() == &bank) {
+            if (boat.canArrive(person) && bank.canLeave(person)) {
+                boat.arrive(person);
+                bank.leave(person); // TODO y a un double check qu'il faudrait remove
+            }
+        } else {
+            throw std::invalid_argument("Boat is not here to pickup the person");
+        }
+    } else {
+        throw std::invalid_argument("Person is not here to embark");
+    }
+}
+
+void Controller::disembark(const Person &person) {
+    if (boat.isHere(person)) {
+        Bank &location = boat.getPosition();
+        if (location.canArrive(person) && boat.canLeave(person)) {
+            location.arrive(person);
+            boat.leave(person);
+        }
+    } else {
+        throw std::invalid_argument("Person is not on boat");
+    }
+}
+
+const Person *Controller::findPerson(const std::string &name) const {
+    for (auto it : peopleInGame) {
+        if (it->getName() == name) {
+            return it;
+        }
+    }
+    return nullptr;
+}
+

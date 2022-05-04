@@ -17,6 +17,7 @@ public:
 
     virtual bool canDrive() const = 0;
      */
+     std::string getName() const;
 protected:
     Person(const std::string &name);
 private:

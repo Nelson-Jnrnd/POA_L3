@@ -4,6 +4,8 @@
 
 #include "Headers/Container.hpp"
 #include <stdexcept>
+#include <algorithm>
+
 
 Container::Container(const std::string& name, const std::list<const Constraint*>& constraints) 
     : NAME(name), CONSTRAINTS(constraints) {
@@ -54,4 +56,8 @@ bool Container::canLeave(const Person &person) const {
         }*/
     }
     return true;
+}
+
+bool Container::isHere(const Person &person) const {
+    return std::find(this->peopleInContainer.begin(), this->peopleInContainer.end(), &person) != this->peopleInContainer.end();
 }
