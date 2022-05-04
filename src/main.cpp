@@ -17,7 +17,10 @@ int main() {
 
     cout << "Create bateau" << endl;
 
+    Adult natalie("Natalie");
+    Adult john("John");
 
+    Child julie = Adult::makeChild(natalie, john, "Julie");
 
     return EXIT_SUCCESS; // TODO pas oublier de mettre ça dans la dernière version
 }
