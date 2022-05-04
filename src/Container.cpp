@@ -4,6 +4,8 @@
 
 #include "Headers/Container.hpp"
 #include <stdexcept>
+#include <algorithm>
+
 
 Container::Container(const std::string& name, const std::list<const Constraint*>& constraints) 
     : NAME(name), CONSTRAINTS(constraints) {
@@ -38,4 +40,32 @@ bool Container::canArrive(const Person& person) const {
         }*/
     }
     return true;
+}
+
+void Container::leave(const Person &person) {
+    if (!canLeave(person)) {
+        throw std::invalid_argument("Combination of constraints and people is not possible");
+    }
+    this->peopleInContainer.remove(&person);
+}
+
+bool Container::canLeave(const Person &person) const {
+    for (const Constraint* constraint : CONSTRAINTS) {
+        /*if (!constraint->isRespected(this->peopleInContainer, person)) {
+            return false;
+        }*/
+    }
+    return true;
+}
+
+bool Container::isHere(const Person &person) const {
+    return std::find(this->peopleInContainer.begin(), this->peopleInContainer.end(), &person) != this->peopleInContainer.end();
+}
+
+std::string Container::getName() const {
+    return this->NAME;
+}
+
+std::list<const Person *> Container::getPeople() const {
+    return this->peopleInContainer;
 }

@@ -3,6 +3,7 @@
 
 
 #include <string>
+#include <list>
 
 /**
  * @brief Represents a person to be transported over the river.
@@ -13,14 +14,10 @@ class Person {
 public:
     /**
      * @brief returns if the person is allowed to drive the boat.
-     */
+
     virtual bool canDrive() const = 0;
-
-    /**
-     * @brief returns if the person is part of a family.
      */
-    virtual bool hasFamily() const = 0;
-
+     std::string getName() const;
 protected:
     Person(const std::string &name);
 private:

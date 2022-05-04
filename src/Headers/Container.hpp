@@ -16,6 +16,12 @@ public:
     void leave(const Person &person);
 
     void arrive(const std::list<const Person*> &people);
+
+    bool isHere(const Person &person) const;
+
+    std::string getName() const;
+
+    std::list<const Person*> getPeople() const;
 protected:
     Container(const std::string& name, const std::list<const Constraint*>& constraints);
     Container(const std::string& name, const std::list<const Constraint*>& constraints, const std::list<const Person*>& people);

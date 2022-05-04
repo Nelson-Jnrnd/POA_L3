@@ -7,12 +7,17 @@
 
 
 #include "Person.hpp"
+#include "Child.hpp"
+class Child;
 
 class Adult : public Person {
 public:
     Adult(const std::string& name);
-    bool canDrive() const override;
-    bool hasFamily() const override;
+    static Child makeChild(Adult& parent1, Adult& parent2, const std::string& childName);
+   // bool canDrive() const override;
+private:
+    std::list<const Child*> children;
+    void addChild(const Child& child);
 };
 
 
