@@ -1,10 +1,5 @@
-//
-// Created by NelsonWork on 11.05.2022.
-//
-
 #ifndef POA_L3_POLICEMAN_HPP
 #define POA_L3_POLICEMAN_HPP
-
 
 #include "Adult.hpp"
 
@@ -13,7 +8,7 @@
  * @version 1.0
  * @date 11.05.2022
  * @author Nelson Jeanrenaud
- * @author 
+ * @author André Marques Nora
  */
 class Policeman : public Adult {
 public:
@@ -21,8 +16,7 @@ public:
      * Constructor
      * @param name
      */
-    Policeman(std::string name);
+    Policeman(const std::string name);
 };
-
 
 #endif //POA_L3_POLICEMAN_HPP
