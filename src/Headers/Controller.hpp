@@ -62,6 +62,11 @@ public:
     const Bank &getRightBank() const;
 
 private:
+    unsigned int turnCount;
+public:
+    unsigned int getTurnCount() const;
+
+private:
     std::list<const Person*> peopleInGame;
     Boat* boat;
     Bank* leftBank;

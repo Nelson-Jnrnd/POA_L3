@@ -10,6 +10,7 @@ using std::cout;
 using std::find;
 
 Controller::Controller() {
+    turnCount = 1;
     Adult* mother = new Adult("mother");
     Adult* father = new Adult("father");
     Policeman* policeman = new Policeman("policeman");
@@ -35,6 +36,7 @@ void Controller::embark(const std::string &name) {
         throw std::invalid_argument("Person not found");
     } else {
         embark(*personToMove);
+        turnCount++;
     }
 }
 
@@ -45,7 +47,13 @@ void Controller::disembark(const std::string &name) {
         throw std::invalid_argument("Person not found");
     } else {
         disembark(*personToMove);
+        turnCount++;
     }
+}
+
+void Controller::moveBoat() {
+    boat->move(std::addressof(boat->getPosition()) == leftBank ? *rightBank : *leftBank);
+    turnCount++;
 }
 
 Bank *Controller::getBank(const Person &person) {
@@ -107,9 +115,6 @@ const Person *Controller::findPerson(const std::string &name) const{
     return nullptr;
 }
 
-void Controller::moveBoat() {
-    boat->move(std::addressof(boat->getPosition()) == leftBank ? *rightBank : *leftBank);
-}
 
 const Boat &Controller::getBoat() const {
     return *boat;
@@ -131,6 +136,10 @@ Controller::~Controller() {
     for (auto it: peopleInGame) {
         delete it;
     }
+}
+
+unsigned int Controller::getTurnCount() const {
+    return turnCount;
 }
 
 

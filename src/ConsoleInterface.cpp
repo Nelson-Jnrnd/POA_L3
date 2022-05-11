@@ -26,7 +26,7 @@ void ConsoleInterface::playGame(istream &input, ostream &output) {
 
     while (true) {
         output << std::endl;
-        output << "Enter a command: ";
+        output << controller->getTurnCount() << "> Enter a command: ";
 
         std::string inputString;
         getline(input, inputString);
