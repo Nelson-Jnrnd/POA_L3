@@ -26,7 +26,7 @@ void ConsoleInterface::playGame(istream &input, ostream &output) {
 
     while (true) {
         output << std::endl;
-        output << "Enter a command: ";
+        output << controller->getTurnCount() << "> Enter a command: ";
 
         std::string inputString;
         getline(input, inputString);
@@ -34,66 +34,64 @@ void ConsoleInterface::playGame(istream &input, ostream &output) {
         char command = inputString[0];
         std::string name;
         output << std::endl;
-        switch (command) {
-            case DISPLAY_CHAR:
-                printLine(output);
-                printContainer(output, controller->getLeftBank());
-                printLine(output);
-                if (&controller->getBoat().getPosition() ==
-                    &controller->getLeftBank()) { // TODO: changer pour pas avoir a faire ce if
-                    printContainer(output, controller->getBoat());
-                    printRiver(output);
-                    output << std::endl;
-                } else {
-                    output << std::endl;
-                    printRiver(output);
-                    printContainer(output, controller->getBoat());
-                }
-                printLine(output);
-                printContainer(output, controller->getRightBank());
-                printLine(output);
-                break;
-            case EMBARK_CHAR:
-                output << "Embarking..." << std::endl;
-                if (inputString.size() <= 1)
-                    output << "No name given" << std::endl;
-                name = inputString.substr(2);
-                try {
-                    controller->embark(name);
-                } catch (const std::invalid_argument &e) {
-                    output << "Invalid command : " << e.what() << std::endl; // TODO custom exception ?
-                }
-                break;
-            case DISEMBARK_CHAR:
-                output << "Disembarking..." << std::endl;
-                if (inputString.size() <= 1)
-                    output << "No name given" << std::endl;
-                name = inputString.substr(2);
-                try {
-                    controller->disembark(name);
-                } catch (const std::invalid_argument &e) {
-                    output << "Invalid command : " << e.what() << std::endl;
-                }
-                break;
-            case MOVE_BOAT_CHAR:
-                output << "Moving boat..." << std::endl;
-                controller->moveBoat();
-                break;
-            case RESET_CHAR:
-                output << "Resetting..." << std::endl;
-                delete controller;
-                controller = new Controller();
-                break;
-            case QUIT_CHAR:
-                output << "Quitting..." << std::endl;
-                delete controller;
-                return;
-            case MENU_CHAR:
-                printHelp(output);
-                break;
-            default:
-                output << "Unknown command" << std::endl;
-                break;
+        try {
+            switch (command) {
+                case DISPLAY_CHAR:
+                    printLine(output);
+                    printContainer(output, controller->getLeftBank());
+                    printLine(output);
+                    if (&controller->getBoat().getPosition() ==
+                        &controller->getLeftBank()) {
+                        printContainer(output, controller->getBoat());
+                        printRiver(output);
+                        output << std::endl;
+                    } else {
+                        output << std::endl;
+                        printRiver(output);
+                        printContainer(output, controller->getBoat());
+                    }
+                    printLine(output);
+                    printContainer(output, controller->getRightBank());
+                    printLine(output);
+                    break;
+                case EMBARK_CHAR:
+                case DISEMBARK_CHAR:
+                    if (inputString.size() <= 1) {
+                        output << "No name given" << std::endl;
+                        break;
+                    }
+                    name = inputString.substr(2);
+                    if(command == EMBARK_CHAR) {
+                        output << "Embarking..." << std::endl;
+                        controller->embark(name);
+                    } else {
+                        output << "Disembarking..." << std::endl;
+                        controller->disembark(name);
+                    }
+                    break;
+                case MOVE_BOAT_CHAR:
+                    output << "Moving boat..." << std::endl;
+                    controller->moveBoat();
+                    break;
+                case RESET_CHAR:
+                    output << "Resetting..." << std::endl;
+                    delete controller;
+                    controller = new Controller();
+                    break;
+                case QUIT_CHAR:
+                    output << "Quitting..." << std::endl;
+                    delete controller;
+                    return;
+                case MENU_CHAR:
+                    printHelp(output);
+                    break;
+                default:
+                    output << "Unknown command" << std::endl;
+                    break;
+            }
+        }
+        catch (const std::invalid_argument &e) {
+            output << "Invalid command : " << e.what() << std::endl;
         }
     }
 }
