@@ -33,10 +33,10 @@ public:
      */
     virtual Response canBeWith(const std::list<const Person *> &people) const = 0;
 
-/**
- * Destructor
- */
-virtual ~Person() = default;
+    /**
+    * Destructor
+    */
+    virtual ~Person() = default;
 
 protected:
    /**
