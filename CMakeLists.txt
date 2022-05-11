@@ -19,8 +19,6 @@ add_executable(POA_L3
         src/Headers/Person.hpp
         src/Adult.cpp
         src/Headers/Adult.hpp
-        src/Ruleset.cpp
-        src/Headers/Ruleset.hpp
         src/Child.cpp
-        src/Headers/Child.hpp src/Headers/ConsoleInterface.cpp src/Headers/ConsoleInterface.hpp src/Headers/Thief.cpp src/Headers/Thief.hpp src/Headers/Policeman.cpp src/Headers/Policeman.hpp)
+        src/Headers/Child.hpp src/ConsoleInterface.cpp src/Headers/ConsoleInterface.hpp src/Thief.cpp src/Headers/Thief.hpp src/Policeman.cpp src/Headers/Policeman.hpp)
 

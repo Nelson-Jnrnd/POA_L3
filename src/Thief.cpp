@@ -2,7 +2,7 @@
 // Created by NelsonWork on 11.05.2022.
 //
 
-#include "Thief.hpp"
+#include "Headers/Thief.hpp"
 #include <algorithm>
 
 bool Thief::canDrive() const {
