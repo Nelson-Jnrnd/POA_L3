@@ -1,7 +1,3 @@
-//
-// Created by NelsonWork on 02.05.2022.
-//
-
 #include "Headers/Adult.hpp"
 #include "Headers/Child.hpp"
 

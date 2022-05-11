@@ -5,7 +5,6 @@
 #ifndef POA_L3_THIEF_HPP
 #define POA_L3_THIEF_HPP
 
-
 #include "Adult.hpp"
 #include "Policeman.hpp"
 
