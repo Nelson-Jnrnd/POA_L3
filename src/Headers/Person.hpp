@@ -1,7 +1,6 @@
 #ifndef POA_L3_PERSON_HPP
 #define POA_L3_PERSON_HPP
 
-
 #include <string>
 #include <list>
 

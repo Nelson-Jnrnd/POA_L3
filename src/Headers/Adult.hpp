@@ -1,16 +1,18 @@
-//
-// Created by NelsonWork on 02.05.2022.
-//
-
 #ifndef POA_L3_ADULT_HPP
 #define POA_L3_ADULT_HPP
-
 
 #include "Person.hpp"
 #include "Child.hpp"
 
 class Child;
 
+/**
+ * Represent a bank on the side of the river. It can contain people under certain conditions.
+ * @date 11-05-2022
+ * @version 1.0
+ * @author Nelson Jeanrenaud
+ * @author André Marques Nora
+ */
 class Adult : public Person {
 public:
     Adult(const std::string &name);
