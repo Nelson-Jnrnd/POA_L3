@@ -23,6 +23,7 @@ public:
     /**
      * Method to switch bank
      * @param newPosition the bank to move to
+     * @throw Error if can't move
      */
     void move(Bank& newPosition);
 
@@ -32,11 +33,15 @@ public:
      */
     Bank& getPosition() const;
 
+    /**
+     * Method to know if a person can be in the boat
+     * @param personArriving
+     * @return bool and message if an error
+     */
     Response canArrive(const Person &personArriving) const override;
 private:
     const static unsigned MAX_PASSENGERS = 2;
     Bank* position;
 };
-
 
 #endif //POA_L3_BOAT_HPP

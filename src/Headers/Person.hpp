@@ -6,9 +6,11 @@
 #include "Response.hpp"
 
 /**
- * @brief Represents a person to be transported over the river.
- * @author Nelson Jeanrenaud
+ * Represent a person
+ * @date 11-05-2022
  * @version 1.0
+ * @author Nelson Jeanrenaud
+ * @author André Marques Nora
  */
 class Person {
 public:
@@ -37,9 +39,13 @@ protected:
     * @param name
     */
     Person(const std::string &name);
+
+    /**
+     * Destructor
+     */
+    virtual ~Person() = default;
 private:
     std::string name;
 };
-
 
 #endif //POA_L3_PERSON_HPP

@@ -4,10 +4,8 @@
 #include "Person.hpp"
 #include "Child.hpp"
 
-class Child;
-
 /**
- * Represent a bank on the side of the river. It can contain people under certain conditions.
+ * Represent a Adult
  * @date 11-05-2022
  * @version 1.0
  * @author Nelson Jeanrenaud
@@ -15,18 +13,25 @@ class Child;
  */
 class Adult : public Person {
 public:
-    Adult(const std::string &name);
 
-    static Child makeChild(Adult &parent1, Adult &parent2, const std::string &childName);
+   /**
+    * Constructor
+    * @param name
+    */
+   Adult(const std::string &name);
 
-    bool canDrive() const override;
+   /**
+    * Method to know if an Adult can drive
+    * @return true if possible
+    */
+   bool canDrive() const override;
 
-    Response canBeWith(const std::list<const Person *> &people) const override;
-private:
-    std::list<const Child *> children;
-
-    void addChild(const Child &child);
+   /**
+    * Method to know if a person can be with specific people
+    * @param people
+    * @return a boolean and a message if an error
+    */
+   Response canBeWith(const std::list<const Person *> &people) const override;
 };
-
 
 #endif //POA_L3_ADULT_HPP

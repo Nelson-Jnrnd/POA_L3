@@ -10,7 +10,12 @@ Container::Container(const std::string& name)
 
 Container::Container(const std::string& name, const std::list<const Person*>& people)
     : Container(name) {
-        arrive(people);
+   for (const Person* person : peopleArriving) {
+      if (person == nullptr) {
+         throw std::invalid_argument("Person cannot be nullptr");
+      }
+      arrive(*person);
+   }
 }
 
 void Container::arrive(const Person& personArriving){
@@ -18,15 +23,6 @@ void Container::arrive(const Person& personArriving){
         throw std::invalid_argument("Combination of constraints and people is not possible");
     }
     this->peopleInContainer.push_back(&personArriving);
-}
-
-void Container::arrive(const std::list<const Person*>& peopleArriving){
-    for (const Person* person : peopleArriving) {
-        if (person == nullptr) {
-            throw std::invalid_argument("Person cannot be nullptr");
-        }
-        arrive(*person);
-    }
 }
 
 Response Container::canArrive(const Person& personArriving) const {

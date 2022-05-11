@@ -6,8 +6,8 @@
 
 /**
  * Represent a Thief
+ * @date 11-05-2022
  * @version 1.0
- * @date 11.05.2022
  * @author Nelson Jeanrenaud
  * @author André Marques Nora
  */

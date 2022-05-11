@@ -7,19 +7,38 @@ class Adult;
 
 /**
  * Represent a Child
+ * @date 04-05-2022
  * @version 1.0
- * @date 04.05.2022
  * @author Nelson Jeanrenaud
  * @author André Marques Nora
  */
 class Child : public Person {
 public:
-    Child(const std::string& name, const Adult &responsibleParent, const Adult &otherParent);
-    bool canDrive() const override;
-    Response canBeWith(const std::list<const Person *> &people) const override;
+
+   /**
+    * Constructor
+    * @param name
+    * @param responsibleParent parent of the same sex
+    * @param otherParent
+    */
+   Child(const std::string& name, const Adult &responsibleParent, const Adult &otherParent);
+
+   /**
+    * Method to know if a child can drive boat
+    * @return False
+    */
+   bool canDrive() const override;
+
+   /**
+    * Method to know if a child can be with specific people
+    * @param people
+    * @return bool and message if an error
+    */
+   Response canBeWith(const std::list<const Person *> &people) const override;
+
 private:
-    const Adult& responsibleParent;
-    const Adult& otherParent;
+   const Adult& responsibleParent;
+   const Adult& otherParent;
 };
 
 #endif //POA_L3_CHILD_HPP

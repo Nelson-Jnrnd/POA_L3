@@ -5,7 +5,13 @@
 #include "Boat.hpp"
 #include "Bank.hpp"
 
-
+/**
+* Represent the Controller of the game
+* @date 11-05-2022
+* @version 1.0
+* @author Nelson Jeanrenaud
+* @author André Marques Nora
+*/
 class Controller {
 public:
    /**
@@ -16,12 +22,14 @@ public:
     /**
      * Method to embark a person given the name
      * @param name of the person
+     * @throw Error if doesn't respect rules
      */
     void embark(const std::string& name);
 
     /**
      * Method to disembark a person given the name
      * @param name of the person
+     * @throw Error if doesn't respect rules
      */
     void disembark(const std::string& name);
 
@@ -71,15 +79,16 @@ private:
     /**
      * Second Method to embark giving the Person directly
      * @param person
+     * @throw Error if doesn't respect rules
      */
     void embark(const Person& person);
 
    /**
     * Second Method to disembark giving the Person directly
     * @param person
+    * @throw Error if doesn't respect rules
     */
     void disembark(const Person& person);
 };
-
 
 #endif //POA_L3_CONTROLLER_HPP
