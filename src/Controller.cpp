@@ -59,7 +59,6 @@ void Controller::disembark(const std::string &name) {
     }
 }
 
-
 Bank *Controller::getBank(const Person &person) {
     if (leftBank.isHere(person)) {
         return &leftBank;

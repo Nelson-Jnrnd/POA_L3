@@ -10,6 +10,7 @@ public:
     Boat(const std::string &name, Bank& boatPosition);
     void move(Bank& newPosition);
     Bank& getPosition() const;
+    bool canArrive(const Person &personArriving) const override;
 private:
     const static unsigned MAX_PASSENGERS = 2;
     Bank* position;

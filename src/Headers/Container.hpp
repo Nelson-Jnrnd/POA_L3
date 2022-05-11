@@ -10,7 +10,7 @@ class Container {
 
 public:
     bool canLeave(const Person &personLeaving) const;
-    bool canArrive(const Person &personArriving) const;
+    virtual bool canArrive(const Person &personArriving) const;
 
     void arrive(const Person &personArriving);
     void leave(const Person &personLeaving);
