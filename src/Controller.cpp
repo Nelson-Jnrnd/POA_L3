@@ -15,9 +15,9 @@ const std::list<const Person *> Controller::peopleInGame = [] {
 
     static Adult alicia("alicia");
     static Adult mike("mike");
-    static Child isaac = Adult::makeChild(mike, alicia, "isaac");
-    static Child nina = Adult::makeChild(alicia, mike, "nina");
-    static Child arthur = Adult::makeChild(alicia, mike, "arthur");
+    static Child isaac("isaac", alicia, mike);
+    static Child nina("nina", alicia, mike);
+    static Child arthur("arthur", alicia, mike);
 
     static Policeman james("james");
     static Thief thomas("thomas", &james);
@@ -37,7 +37,6 @@ Controller::Controller() :
         leftBank("leftBank", peopleInGame),
         rightBank("rightBank"),
         boat("boat", leftBank) {}
-
 
 void Controller::embark(const std::string &name) {
     const Person *personToMove = findPerson(name);
