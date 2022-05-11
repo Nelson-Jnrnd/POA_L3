@@ -30,12 +30,12 @@ public:
    /**
     * Method to know if the thief can be with other people
     * @param people
-    * @return Bool
+    * @return Response composed of a bool and string
     */
-   bool canBeWith(const std::list<const Person *> &people) const override;
+   Response canBeWith(const std::list<const Person *> &people) const override;
+
 private:
     const Policeman *policemanWatching;
 };
-
 
 #endif //POA_L3_THIEF_HPP

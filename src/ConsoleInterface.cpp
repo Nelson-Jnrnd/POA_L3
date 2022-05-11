@@ -5,7 +5,7 @@
 using std::cout;
 using std::ostream;
 using std::istream;
-
+// TODO : faire une classe pour les commandes
 const char ConsoleInterface::DISPLAY_CHAR = 'p';
 const char ConsoleInterface::EMBARK_CHAR = 'e';
 const char ConsoleInterface::DISEMBARK_CHAR = 'd';
@@ -61,7 +61,7 @@ void ConsoleInterface::playGame(istream &input, ostream &output) {
                 try {
                     controller.embark(name);
                 } catch (const std::invalid_argument &e) {
-                    output << "Invalid command : " << name << " can't embark" << std::endl;
+                    output << "Invalid command : " << e.what() << std::endl; // TODO custom exception ?
                 }
                 break;
             case DISEMBARK_CHAR:
@@ -72,7 +72,7 @@ void ConsoleInterface::playGame(istream &input, ostream &output) {
                 try {
                     controller.disembark(name);
                 } catch (const std::invalid_argument &e) {
-                    output << "Invalid command : " << name << " can't disembark" << std::endl;
+                    output << "Invalid command : " << e.what() << std::endl;
                 }
                 break;
             case MOVE_BOAT_CHAR:

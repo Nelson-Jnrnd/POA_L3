@@ -3,6 +3,7 @@
 
 #include <string>
 #include <list>
+#include "Response.hpp"
 
 /**
  * @brief Represents a person to be transported over the river.
@@ -26,9 +27,10 @@ public:
     /**
      * Method to know if a person can be with others
      * @param people
-     * @return bool
+     * @return Response composed of a bool and string
      */
-    virtual bool canBeWith(const std::list<const Person *> &people) const = 0;
+    virtual Response canBeWith(const std::list<const Person *> &people) const = 0;
+
 protected:
    /**
     * Constructor

@@ -59,7 +59,7 @@ private:
      * @param name of the person
      * @return Pointer to Person
      */
-    const Person* findPerson(const std::string& name) const;
+    static const Person* findPerson(const std::string& name) const;
 
     /**
      * Method to get on which bank is a person

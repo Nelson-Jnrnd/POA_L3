@@ -32,7 +32,7 @@ public:
      */
     Bank& getPosition() const;
 
-    bool canArrive(const Person &personArriving) const override;
+    Response canArrive(const Person &personArriving) const override;
 private:
     const static unsigned MAX_PASSENGERS = 2;
     Bank* position;

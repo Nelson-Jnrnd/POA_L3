@@ -9,17 +9,18 @@ bool Thief::canDrive() const {
     return false;
 }
 
-bool Thief::canBeWith(const std::list<const Person *> &people) const {
-    if(!Adult::canBeWith(people)) {
-        return false;
+Response Thief::canBeWith(const std::list<const Person *> &people) const {
+    Response personResponse = Adult::canBeWith(people);
+    if(!personResponse.isAllowed()) {
+        return personResponse;
     }
     // cast policeman into person
     const auto policeman = dynamic_cast<const Person*>(policemanWatching);
     auto policemanFound = std::find(people.begin(), people.end(), &*policeman);
     if(policemanFound == people.end() && people.size() > 1) {
-        return false;
+        return Response(false, getName() + " can't be with other people without " + policeman->getName() + " watching him");
     }
-    return true;
+    return Response(true);
 }
 
 

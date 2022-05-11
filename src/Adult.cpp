@@ -19,6 +19,6 @@ bool Adult::canDrive() const {
     return true;
 }
 
-bool Adult::canBeWith(const std::list<const Person *> &people) const {
-    return true;
+Response Adult::canBeWith(const std::list<const Person *> &people) const {
+    return Response(true);
 }
