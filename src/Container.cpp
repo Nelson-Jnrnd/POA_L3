@@ -10,7 +10,7 @@ Container::Container(const std::string& name)
 
 Container::Container(const std::string& name, const std::list<const Person*>& people)
     : Container(name) {
-   for (const Person* person : peopleArriving) {
+   for (const Person* person : people) {
       if (person == nullptr) {
          throw std::invalid_argument("Person cannot be nullptr");
       }

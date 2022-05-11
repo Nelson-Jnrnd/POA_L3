@@ -9,34 +9,30 @@
 using std::cout;
 using std::find;
 
+Controller::Controller() {
 
-// TODO à modifier, grégoire va pleurer s'il voit ça
-const std::list<const Person *> Controller::peopleInGame = [] {
+    Adult* mother = new Adult("mother");
+    Adult* father = new Adult("father");
+    Policeman* policeman = new Policeman("policeman");
+    peopleInGame.push_back(mother);
+    peopleInGame.push_back(father);
+    peopleInGame.push_back(new Child("julie", *mother, *father));
+    peopleInGame.push_back(new Child("jeanne", *mother, *father));
+    peopleInGame.push_back(new Child("pierre", *father, *mother));
+    peopleInGame.push_back(new Child("paul", *father, *mother));
+    peopleInGame.push_back(policeman);
+    peopleInGame.push_back(new Thief("thief", policeman));
 
-    static Adult alicia("alicia");
-    static Adult mike("mike");
-    static Child isaac("isaac", alicia, mike);
-    static Child nina("nina", alicia, mike);
-    static Child arthur("arthur", alicia, mike);
+    leftBank = new Bank("leftBank", peopleInGame);
+    rightBank = new Bank("rightBank");
+    boat = new Boat("boat", *leftBank);
+}
 
-    static Policeman james("james");
-    static Thief thomas("thomas", &james);
 
-    std::list<const Person *> people;
-    people.push_back(&alicia);
-    people.push_back(&mike);
-    people.push_back(&isaac);
-    people.push_back(&nina);
-    people.push_back(&arthur);
-    people.push_back(&james);
-    people.push_back(&thomas);
-    return people;
-}();
+void Controller::initGame() {
 
-Controller::Controller() :
-        leftBank("leftBank", peopleInGame),
-        rightBank("rightBank"),
-        boat("boat", leftBank) {}
+}
+
 
 void Controller::embark(const std::string &name) {
     const Person *personToMove = findPerson(name);
@@ -59,10 +55,10 @@ void Controller::disembark(const std::string &name) {
 }
 
 Bank *Controller::getBank(const Person &person) {
-    if (leftBank.isHere(person)) {
-        return &leftBank;
-    } else if (rightBank.isHere(person)) {
-        return &rightBank;
+    if (leftBank->isHere(person)) {
+        return leftBank;
+    } else if (rightBank->isHere(person)) {
+        return rightBank;
     } else {
         return nullptr;
     }
@@ -71,8 +67,8 @@ Bank *Controller::getBank(const Person &person) {
 void Controller::embark(const Person &person) {
     Bank *bank = getBank(person);
     if (bank != nullptr) {
-        if (&boat.getPosition() == bank) {
-            Response boatResponse = boat.canArrive(person);
+        if (&boat->getPosition() == bank) {
+            Response boatResponse = boat->canArrive(person);
             if (!boatResponse.isAllowed()) {
                 throw std::invalid_argument(boatResponse.getReason());
             }
@@ -80,8 +76,8 @@ void Controller::embark(const Person &person) {
             if (!bankResponse.isAllowed()) {
                 throw std::invalid_argument(bankResponse.getReason());
             }
-            boat.arrive(person);
-            bank->leave(person); // TODO y a un double check qu'il faudrait remove
+            boat->arrive(person);
+            bank->leave(person);
         } else {
             throw std::invalid_argument("Boat is not here to pickup " + person.getName());
         }
@@ -91,9 +87,9 @@ void Controller::embark(const Person &person) {
 }
 
 void Controller::disembark(const Person &person) {
-    if (boat.isHere(person)) {
-        Bank &location = boat.getPosition();
-        Response boatResponse = boat.canLeave(person);
+    if (boat->isHere(person)) {
+        Bank &location = boat->getPosition();
+        Response boatResponse = boat->canLeave(person);
         if (!boatResponse.isAllowed()) {
             throw std::invalid_argument(boatResponse.getReason());
         }
@@ -101,14 +97,14 @@ void Controller::disembark(const Person &person) {
         if (!bankResponse.isAllowed()) {
             throw std::invalid_argument(bankResponse.getReason());
         }
-        boat.leave(person);
-        location.arrive(person); // TODO y a un double check qu'il faudrait remove
+        boat->leave(person);
+        location.arrive(person);
     } else {
         throw std::invalid_argument(person.getName() + " is not on boat");
     }
 }
 
-const Person *Controller::findPerson(const std::string &name) {
+const Person *Controller::findPerson(const std::string &name) const{
     for (auto it: peopleInGame) {
         if (it->getName() == name) {
             return it;
@@ -118,19 +114,19 @@ const Person *Controller::findPerson(const std::string &name) {
 }
 
 void Controller::moveBoat() {
-    boat.move(&boat.getPosition() == &leftBank ? rightBank : leftBank);
+    boat->move(std::addressof(boat->getPosition()) == leftBank ? *rightBank : *leftBank);
 }
 
 const Boat &Controller::getBoat() const {
-    return boat;
+    return *boat;
 }
 
 const Bank &Controller::getLeftBank() const {
-    return leftBank;
+    return *leftBank;
 }
 
 const Bank &Controller::getRightBank() const {
-    return rightBank;
+    return *rightBank;
 }
 
 

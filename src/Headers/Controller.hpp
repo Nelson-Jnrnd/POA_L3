@@ -57,17 +57,22 @@ public:
     const Bank &getRightBank() const;
 
 private:
-    static const std::list<const Person*> peopleInGame;
-    Boat boat;
-    Bank leftBank;
-    Bank rightBank;
+    std::list<const Person*> peopleInGame;
+    Boat* boat;
+    Bank* leftBank;
+    Bank* rightBank;
+
+    /**
+     * Initialize the game by destroying all previous data and creating new ones
+     */
+    void initGame();
 
     /**
      * Method to find a person given the name
      * @param name of the person
      * @return Pointer to Person
      */
-    static const Person* findPerson(const std::string& name) const;
+    const Person* findPerson(const std::string& name) const;
 
     /**
      * Method to get on which bank is a person
