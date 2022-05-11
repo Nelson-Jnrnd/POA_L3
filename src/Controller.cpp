@@ -1,5 +1,7 @@
 #include "Headers/Controller.hpp"
 #include "Headers/Adult.hpp"
+#include "Headers/Policeman.hpp"
+#include "Headers/Thief.hpp"
 
 #include <iostream>
 #include <algorithm>
@@ -17,12 +19,17 @@ const std::list<const Person *> Controller::peopleInGame = [] {
     static Child nina = Adult::makeChild(alicia, mike, "nina");
     static Child arthur = Adult::makeChild(alicia, mike, "arthur");
 
+    static Policeman james("james");
+    static Thief thomas("thomas", &james);
+
     std::list<const Person *> people;
     people.push_back(&alicia);
     people.push_back(&mike);
     people.push_back(&isaac);
     people.push_back(&nina);
     people.push_back(&arthur);
+    people.push_back(&james);
+    people.push_back(&thomas);
     return people;
 }();
 
