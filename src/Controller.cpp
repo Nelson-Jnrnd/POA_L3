@@ -56,7 +56,7 @@ void Controller::moveBoat() {
     turnCount++;
 }
 
-Bank *Controller::getBank(const Person &person) {
+Bank *Controller::getBank(const Person &person) const{
     if (leftBank->isHere(person)) {
         return leftBank;
     } else if (rightBank->isHere(person)) {

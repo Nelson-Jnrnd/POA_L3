@@ -25,7 +25,7 @@ public:
      * @param name the side of the river
      * @param people present on the bank
      */
-    Bank(const std::string &name, const std::list<const Person*> people);
+    Bank(const std::string &name, const std::list<const Person*>& people);
 };
 
 

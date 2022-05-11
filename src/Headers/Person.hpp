@@ -46,7 +46,7 @@ protected:
     Person(const std::string &name);
 
 private:
-    std::string name;
+    const std::string name;
 };
 
 #endif //POA_L3_PERSON_HPP

@@ -61,12 +61,14 @@ public:
     */
     const Bank &getRightBank() const;
 
+    /**
+     * Method to get the number of turns played so far
+     * @return unsigned int
+     */
+    unsigned int getTurnCount() const;
 private:
     unsigned int turnCount;
-public:
-    unsigned int getTurnCount() const;
 
-private:
     std::list<const Person*> peopleInGame;
     Boat* boat;
     Bank* leftBank;
@@ -85,7 +87,7 @@ private:
      * @param person
      * @return Bank
      */
-    Bank* getBank(const Person& person);
+    Bank* getBank(const Person& person) const;
 
     /**
      * Second Method to embark giving the Person directly
