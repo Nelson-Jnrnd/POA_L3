@@ -2,7 +2,7 @@
 #include "Headers/Ruleset.hpp"
 
 Boat::Boat(const std::string &name, Bank &boatPosition) :
-    Container(name, Ruleset::getConstraints()),
+    Container(name),
     position(&boatPosition){}
 
 void Boat::move(Bank& newPosition) {

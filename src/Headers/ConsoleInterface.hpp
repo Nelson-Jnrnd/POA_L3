@@ -27,6 +27,7 @@ private:
     static const char DISPLAY_CHAR;
     static const char EMBARK_CHAR;
     static const char DISEMBARK_CHAR;
+    static const char MOVE_BOAT_CHAR;
     static const char RESET_CHAR;
     static const char QUIT_CHAR;
     static const char MENU_CHAR;
@@ -38,7 +39,6 @@ private:
     static void printContainer(std::ostream &output, const Container& container);
     static void printLine(std::ostream &output);
     static void printRiver(std::ostream &output);
-    static char getInput(std::istream &input);
 };
 
 

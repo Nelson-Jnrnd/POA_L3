@@ -19,11 +19,12 @@ class Adult;
  */
 class Child : public Person {
 public:
-    Child(const std::string& name, const Adult &parent1, const Adult &parent2);
-
+    Child(const std::string& name, const Adult &responsibleParent, const Adult &otherParent);
+    bool canDrive() const override;
+    bool canBeWith(const std::list<const Person *> &people) const override;
 private:
-    const Adult& PARENT1;
-    const Adult& PARENT2;
+    const Adult& responsibleParent;
+    const Adult& otherParent;
 };
 
 #endif //POA_L3_CHILD_HPP

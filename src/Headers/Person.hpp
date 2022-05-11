@@ -14,10 +14,10 @@ class Person {
 public:
     /**
      * @brief returns if the person is allowed to drive the boat.
-
+    */
     virtual bool canDrive() const = 0;
-     */
-     std::string getName() const;
+    std::string getName() const;
+    virtual bool canBeWith(const std::list<const Person *> &people) const = 0;
 protected:
     Person(const std::string &name);
 private:

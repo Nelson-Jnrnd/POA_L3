@@ -31,51 +31,27 @@ Controller::Controller() :
         rightBank("rightBank"),
         boat("boat", leftBank) {}
 
-void Controller::start() {
-    while (true) {
-        std::cout << "Welcome to the game.\n";
-        std::cout << "Embarking with alicia" << std::endl;
-        move("alicia");
-        std::cout << "Embarking with nina" << std::endl;
-        move("nina");
 
-        std::cout << "Disembarking with alicia" << std::endl;
-        move("alicia");
-
-        std::cout << "Disembarking with nina" << std::endl;
-        move("nina");
-
-        std::cout << "Embarking with arthur" << std::endl;
-        move("arthur");
-
-        std::cout << "Moving boat" << std::endl;
-        moveBoat();
-
-        std::cout << "Disembarking with arthur" << std::endl;
-        move("arthur");
-
-        break;
-    }
-}
-
-void Controller::move(const std::string &name) {
+void Controller::embark(const std::string &name) {
     const Person* personToMove = findPerson(name);
 
     if(personToMove == nullptr) {
         throw std::invalid_argument("Person not found");
     } else {
-        move(*personToMove);
+        embark(*personToMove);
     }
 }
 
-void Controller::move(const Person &person) {
-    Bank *location = getBank(person);
-    if (location != nullptr) {
-        embark(person, *location);
+void Controller::disembark(const std::string &name) {
+    const Person* personToMove = findPerson(name);
+
+    if(personToMove == nullptr) {
+        throw std::invalid_argument("Person not found");
     } else {
-        disembark(person);
+        disembark(*personToMove);
     }
 }
+
 
 Bank *Controller::getBank(const Person &person) {
     if (leftBank.isHere(person)) {
@@ -87,18 +63,20 @@ Bank *Controller::getBank(const Person &person) {
     }
 }
 
-void Controller::embark(const Person &person, Bank &bank) {
-    if (bank.isHere(person)) {
-        if (&boat.getPosition() == &bank) {
-            if (boat.canArrive(person) && bank.canLeave(person)) {
+void Controller::embark(const Person &person) {
+    Bank *bank = getBank(person);
+    if(bank != nullptr) {
+        if (&boat.getPosition() == bank) {
+            if (boat.canArrive(person) && bank->canLeave(person)) {
                 boat.arrive(person);
-                bank.leave(person); // TODO y a un double check qu'il faudrait remove
+                bank->leave(person); // TODO y a un double check qu'il faudrait remove
+            } else {
+                throw std::invalid_argument("Person cannot embark");
             }
         } else {
             throw std::invalid_argument("Boat is not here to pickup the person");
-        }
-    } else {
-        throw std::invalid_argument("Person is not here to embark");
+        }    } else {
+        throw std::invalid_argument("Person cannot embark");
     }
 }
 
@@ -108,6 +86,8 @@ void Controller::disembark(const Person &person) {
         if (location.canArrive(person) && boat.canLeave(person)) {
             location.arrive(person);
             boat.leave(person);
+        } else {
+            throw std::invalid_argument("Person cannot disembark");
         }
     } else {
         throw std::invalid_argument("Person is not on boat");
@@ -138,4 +118,5 @@ const Bank &Controller::getLeftBank() const {
 const Bank &Controller::getRightBank() const {
     return rightBank;
 }
+
 

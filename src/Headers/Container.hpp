@@ -9,13 +9,13 @@
 class Container {
 
 public:
-    bool canLeave(const Person &person) const;
-    bool canArrive(const Person &person) const;
+    bool canLeave(const Person &personLeaving) const;
+    bool canArrive(const Person &personArriving) const;
 
-    void arrive(const Person &person);
-    void leave(const Person &person);
+    void arrive(const Person &personArriving);
+    void leave(const Person &personLeaving);
 
-    void arrive(const std::list<const Person*> &people);
+    void arrive(const std::list<const Person*> &peopleArriving);
 
     bool isHere(const Person &person) const;
 
@@ -23,12 +23,11 @@ public:
 
     std::list<const Person*> getPeople() const;
 protected:
-    Container(const std::string& name, const std::list<const Constraint*>& constraints);
-    Container(const std::string& name, const std::list<const Constraint*>& constraints, const std::list<const Person*>& people);
+    Container(const std::string& name);
+    Container(const std::string& name, const std::list<const Person*>& people);
 
 private:
     const std::string NAME;
-    const std::list<const Constraint*> CONSTRAINTS;
     std::list<const Person*> peopleInContainer;
 };
 

@@ -10,9 +10,8 @@ class Controller {
 public:
     Controller();
 
-    void start();
-
-    void move(const std::string& name);
+    void embark(const std::string& name);
+    void disembark(const std::string& name);
     void moveBoat();
 
     const Boat &getBoat() const;
@@ -28,8 +27,7 @@ private:
 
     const Person* findPerson(const std::string& name) const;
     Bank* getBank(const Person& person);
-    void move(const Person& person);
-    void embark(const Person& person, Bank& bank);
+    void embark(const Person& person);
     void disembark(const Person& person);
 };
 
