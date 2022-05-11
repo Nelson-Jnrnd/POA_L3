@@ -20,5 +20,5 @@ add_executable(POA_L3
         src/Adult.cpp
         src/Headers/Adult.hpp
         src/Child.cpp
-        src/Headers/Child.hpp src/ConsoleInterface.cpp src/Headers/ConsoleInterface.hpp src/Thief.cpp src/Headers/Thief.hpp src/Policeman.cpp src/Headers/Policeman.hpp)
+        src/Headers/Child.hpp src/ConsoleInterface.cpp src/Headers/ConsoleInterface.hpp src/Thief.cpp src/Headers/Thief.hpp src/Policeman.cpp src/Headers/Policeman.hpp src/Headers/Response.cpp src/Headers/Response.hpp)
 

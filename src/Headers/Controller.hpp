@@ -25,7 +25,7 @@ private:
     Bank leftBank;
     Bank rightBank;
 
-    const Person* findPerson(const std::string& name) const;
+    static const Person* findPerson(const std::string& name) ;
     Bank* getBank(const Person& person);
     void embark(const Person& person);
     void disembark(const Person& person);

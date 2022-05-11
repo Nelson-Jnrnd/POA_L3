@@ -14,7 +14,7 @@ Container::Container(const std::string& name, const std::list<const Person*>& pe
 }
 
 void Container::arrive(const Person& personArriving){
-    if (!canArrive(personArriving)) {
+    if (!canArrive(personArriving).isAllowed()) {
         throw std::invalid_argument("Combination of constraints and people is not possible");
     }
     this->peopleInContainer.push_back(&personArriving);
@@ -29,35 +29,37 @@ void Container::arrive(const std::list<const Person*>& peopleArriving){
     }
 }
 
-bool Container::canArrive(const Person& personArriving) const {
+Response Container::canArrive(const Person& personArriving) const {
     // Creates a new list of people with the personArriving
     std::list<const Person*> people = getPeople();
     people.push_back(&personArriving);
     for (const Person* person : people) {
-        if(!person->canBeWith(people)){
-            return false;
+        Response resp = person->canBeWith(people);
+        if(!resp.isAllowed()){
+            return resp;
         }
     }
-    return true;
+    return Response(true);
 }
 
 void Container::leave(const Person &personLeaving) {
-    if (!canLeave(personLeaving)) {
+    if (!canLeave(personLeaving).isAllowed()) {
         throw std::invalid_argument("Combination of constraints and people is not possible");
     }
     this->peopleInContainer.remove(&personLeaving);
 }
 
-bool Container::canLeave(const Person &personLeaving) const {
+Response Container::canLeave(const Person &personLeaving) const {
     // Creates a new list of people with the personArriving
     std::list<const Person*> people = getPeople();
     people.remove(&personLeaving);
     for (const Person* person : people) {
-        if(!person->canBeWith(people)){
-            return false;
+        Response resp = person->canBeWith(people);
+        if(!resp.isAllowed()){
+            return resp;
         }
     }
-    return true;
+    return Response(true);
 }
 
 bool Container::isHere(const Person &person) const {

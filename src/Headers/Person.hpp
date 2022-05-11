@@ -3,6 +3,7 @@
 
 #include <string>
 #include <list>
+#include "Response.hpp"
 
 /**
  * @brief Represents a person to be transported over the river.
@@ -16,7 +17,7 @@ public:
     */
     virtual bool canDrive() const = 0;
     std::string getName() const;
-    virtual bool canBeWith(const std::list<const Person *> &people) const = 0;
+    virtual Response canBeWith(const std::list<const Person *> &people) const = 0;
 protected:
     Person(const std::string &name);
 private:

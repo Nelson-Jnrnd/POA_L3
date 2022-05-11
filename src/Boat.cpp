@@ -1,6 +1,5 @@
 #include <stdexcept>
 #include "Headers/Boat.hpp"
-#include "Headers/Ruleset.hpp"
 
 Boat::Boat(const std::string &name, Bank &boatPosition) :
     Container(name),
@@ -21,7 +20,10 @@ Bank &Boat::getPosition() const {
     return *position;
 }
 
-bool Boat::canArrive(const Person &personArriving) const {
-    return (Container::canArrive(personArriving) && this->getPeople().size() < MAX_PASSENGERS);
+Response Boat::canArrive(const Person &personArriving) const {
+    if(this->getPeople().size() >= MAX_PASSENGERS) {
+        return Response(false, "Boat is full");
+    }
+    return Container::canArrive(personArriving);
 }
 

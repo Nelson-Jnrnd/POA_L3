@@ -21,7 +21,7 @@ public:
 
     bool canDrive() const override;
 
-    bool canBeWith(const std::list<const Person *> &people) const override;
+    Response canBeWith(const std::list<const Person *> &people) const override;
 private:
     std::list<const Child *> children;
 

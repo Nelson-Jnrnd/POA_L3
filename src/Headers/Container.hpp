@@ -4,7 +4,6 @@
 #include <string>
 #include <list>
 #include "Person.hpp"
-#include "Constraint.hpp"
 
 /**
  * Represent all containable object in project
@@ -20,8 +19,8 @@ public:
     * @param personLeaving
     * @return true if can leave or false if not
     */
-    bool canLeave(const Person &personLeaving) const;
-    virtual bool canArrive(const Person &personArriving) const;
+    Response canLeave(const Person &personLeaving) const;
+    virtual Response canArrive(const Person &personArriving) const;
 
     void arrive(const Person &personArriving);
     void leave(const Person &personLeaving);

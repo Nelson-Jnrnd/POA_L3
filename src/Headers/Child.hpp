@@ -21,7 +21,7 @@ class Child : public Person {
 public:
     Child(const std::string& name, const Adult &responsibleParent, const Adult &otherParent);
     bool canDrive() const override;
-    bool canBeWith(const std::list<const Person *> &people) const override;
+    Response canBeWith(const std::list<const Person *> &people) const override;
 private:
     const Adult& responsibleParent;
     const Adult& otherParent;
