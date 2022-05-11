@@ -9,7 +9,7 @@
 using std::cout;
 using std::ostream;
 using std::istream;
-
+// TODO : faire une classe pour les commandes
 const char ConsoleInterface::DISPLAY_CHAR = 'p';
 const char ConsoleInterface::EMBARK_CHAR = 'e';
 const char ConsoleInterface::DISEMBARK_CHAR = 'd';
