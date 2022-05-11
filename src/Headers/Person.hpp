@@ -44,7 +44,7 @@ protected:
     * @param name
     */
     Person(const std::string &name);
-    
+
 private:
     std::string name;
 };

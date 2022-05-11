@@ -234,6 +234,7 @@
       </method>
     </entity>
     <entity entityType="CLASS" id="25703" isAbstract="false" name="Controller" visibility="PUBLIC">
+      <attribute const="false" defaultValue="" isStatic="false" name="turnCount" type="unsigned" visibility="PRIVATE"/>
       <method is-constructor="true" isAbstract="false" isStatic="false" name="Controller" returnType="" view="DEFAULT" visibility="PUBLIC"/>
       <method is-constructor="true" isAbstract="false" isStatic="false" name="~Controller" returnType="" view="DEFAULT" visibility="PUBLIC"/>
       <method isAbstract="false" isStatic="false" name="embark" returnType="void" view="DEFAULT" visibility="PUBLIC">
@@ -258,6 +259,7 @@
       <method isAbstract="false" isStatic="false" name="disembark" returnType="void" view="DEFAULT" visibility="PRIVATE">
         <variable const="false" name="person" type="const_Person&amp;"/>
       </method>
+      <method isAbstract="false" isStatic="false" name="getTurnCount" returnType="unsigned" view="DEFAULT" visibility="PUBLIC"/>
     </entity>
     <entity entityType="CLASS" id="25660" isAbstract="true" name="Person" visibility="PUBLIC">
       <attribute const="false" defaultValue="" isStatic="false" name="name" type="string" visibility="PRIVATE"/>
@@ -420,40 +422,40 @@
       <line>
         <point>
           <x>1141</x>
-          <y>211</y>
+          <y>221</y>
         </point>
         <point>
-          <x>1291</x>
-          <y>211</y>
+          <x>1461</x>
+          <y>221</y>
         </point>
       </line>
       <labelAssociation>
-        <x>1187</x>
-        <y>218</y>
+        <x>1280</x>
+        <y>230</y>
         <w>55</w>
         <h>17</h>
       </labelAssociation>
       <roleAssociation>
         <x>1145</x>
-        <y>215</y>
+        <y>225</y>
         <w>0</w>
         <h>17</h>
       </roleAssociation>
       <roleAssociation>
-        <x>1285</x>
-        <y>215</y>
+        <x>1455</x>
+        <y>225</y>
         <w>0</w>
         <h>17</h>
       </roleAssociation>
       <multipliciteAssociation>
-        <x>1158</x>
-        <y>180</y>
+        <x>1145</x>
+        <y>198</y>
         <w>22</w>
         <h>17</h>
       </multipliciteAssociation>
       <multipliciteAssociation>
-        <x>1256</x>
-        <y>178</y>
+        <x>1433</x>
+        <y>198</y>
         <w>22</w>
         <h>17</h>
       </multipliciteAssociation>
@@ -462,40 +464,40 @@
       <line>
         <point>
           <x>971</x>
-          <y>481</y>
+          <y>501</y>
         </point>
         <point>
           <x>971</x>
-          <y>346</y>
+          <y>376</y>
         </point>
       </line>
       <labelAssociation>
         <x>975</x>
-        <y>418</y>
+        <y>443</y>
         <w>0</w>
         <h>17</h>
       </labelAssociation>
       <roleAssociation>
         <x>975</x>
-        <y>458</y>
+        <y>478</y>
         <w>0</w>
         <h>17</h>
       </roleAssociation>
       <roleAssociation>
         <x>975</x>
-        <y>350</y>
+        <y>380</y>
         <w>0</w>
         <h>17</h>
       </roleAssociation>
       <multipliciteAssociation>
         <x>943</x>
-        <y>458</y>
+        <y>478</y>
         <w>22</w>
         <h>17</h>
       </multipliciteAssociation>
       <multipliciteAssociation>
-        <x>957</x>
-        <y>350</y>
+        <x>945</x>
+        <y>390</y>
         <w>8</w>
         <h>17</h>
       </multipliciteAssociation>
@@ -503,41 +505,41 @@
     <relationView color="-12566464" relationId="78503">
       <line>
         <point>
-          <x>1621</x>
-          <y>391</y>
+          <x>1661</x>
+          <y>421</y>
         </point>
         <point>
-          <x>1811</x>
-          <y>391</y>
+          <x>1801</x>
+          <y>421</y>
         </point>
       </line>
       <labelAssociation>
-        <x>1655</x>
-        <y>356</y>
+        <x>1673</x>
+        <y>380</y>
         <w>120</w>
         <h>17</h>
       </labelAssociation>
       <roleAssociation>
-        <x>1625</x>
-        <y>395</y>
+        <x>1665</x>
+        <y>425</y>
         <w>0</w>
         <h>17</h>
       </roleAssociation>
       <roleAssociation>
-        <x>1775</x>
-        <y>395</y>
+        <x>1795</x>
+        <y>425</y>
         <w>0</w>
         <h>17</h>
       </roleAssociation>
       <multipliciteAssociation>
-        <x>1625</x>
-        <y>368</y>
+        <x>1665</x>
+        <y>398</y>
         <w>22</w>
         <h>17</h>
       </multipliciteAssociation>
       <multipliciteAssociation>
-        <x>1797</x>
-        <y>368</y>
+        <x>1787</x>
+        <y>398</y>
         <w>8</w>
         <h>17</h>
       </multipliciteAssociation>
@@ -545,41 +547,41 @@
     <relationView color="-12566464" relationId="78589">
       <line>
         <point>
-          <x>1621</x>
-          <y>441</y>
+          <x>1661</x>
+          <y>471</y>
         </point>
         <point>
-          <x>1811</x>
-          <y>441</y>
+          <x>1801</x>
+          <y>471</y>
         </point>
       </line>
       <labelAssociation>
-        <x>1659</x>
-        <y>452</y>
+        <x>1680</x>
+        <y>483</y>
         <w>108</w>
         <h>17</h>
       </labelAssociation>
       <roleAssociation>
-        <x>1625</x>
-        <y>445</y>
+        <x>1665</x>
+        <y>475</y>
         <w>0</w>
         <h>17</h>
       </roleAssociation>
       <roleAssociation>
-        <x>1805</x>
-        <y>445</y>
+        <x>1795</x>
+        <y>475</y>
         <w>0</w>
         <h>17</h>
       </roleAssociation>
       <multipliciteAssociation>
-        <x>1625</x>
-        <y>418</y>
+        <x>1665</x>
+        <y>448</y>
         <w>22</w>
         <h>17</h>
       </multipliciteAssociation>
       <multipliciteAssociation>
-        <x>1797</x>
-        <y>418</y>
+        <x>1787</x>
+        <y>448</y>
         <w>8</w>
         <h>17</h>
       </multipliciteAssociation>
@@ -588,7 +590,7 @@
       <line>
         <point>
           <x>2141</x>
-          <y>621</y>
+          <y>641</y>
         </point>
         <point>
           <x>2141</x>
@@ -600,36 +602,36 @@
         </point>
         <point>
           <x>1831</x>
-          <y>591</y>
+          <y>611</y>
         </point>
       </line>
       <labelAssociation>
-        <x>1945</x>
-        <y>638</y>
+        <x>1927</x>
+        <y>668</y>
         <w>82</w>
         <h>17</h>
       </labelAssociation>
       <roleAssociation>
         <x>2145</x>
-        <y>625</y>
+        <y>645</y>
         <w>0</w>
         <h>17</h>
       </roleAssociation>
       <roleAssociation>
         <x>1835</x>
-        <y>595</y>
+        <y>615</y>
         <w>0</w>
         <h>17</h>
       </roleAssociation>
       <multipliciteAssociation>
         <x>2145</x>
-        <y>625</y>
+        <y>645</y>
         <w>22</w>
         <h>17</h>
       </multipliciteAssociation>
       <multipliciteAssociation>
         <x>1793</x>
-        <y>597</y>
+        <y>617</y>
         <w>22</w>
         <h>17</h>
       </multipliciteAssociation>
@@ -641,16 +643,16 @@
           <y>71</y>
         </point>
         <point>
-          <x>1391</x>
+          <x>1561</x>
           <y>71</y>
         </point>
         <point>
-          <x>1391</x>
-          <y>121</y>
+          <x>1561</x>
+          <y>131</y>
         </point>
       </line>
       <labelAssociation>
-        <x>1010</x>
+        <x>1095</x>
         <y>75</y>
         <w>54</w>
         <h>17</h>
@@ -662,8 +664,8 @@
         <h>17</h>
       </roleAssociation>
       <roleAssociation>
-        <x>1395</x>
-        <y>98</y>
+        <x>1565</x>
+        <y>108</y>
         <w>0</w>
         <h>17</h>
       </roleAssociation>
@@ -674,8 +676,8 @@
         <h>17</h>
       </multipliciteAssociation>
       <multipliciteAssociation>
-        <x>1355</x>
-        <y>97</y>
+        <x>1525</x>
+        <y>107</y>
         <w>22</w>
         <h>17</h>
       </multipliciteAssociation>
@@ -723,20 +725,20 @@
     <relationView color="-12566464" relationId="25857">
       <line>
         <point>
-          <x>1361</x>
-          <y>361</y>
+          <x>1401</x>
+          <y>391</y>
         </point>
         <point>
-          <x>1361</x>
+          <x>1401</x>
           <y>321</y>
         </point>
         <point>
-          <x>1531</x>
+          <x>1701</x>
           <y>321</y>
         </point>
         <point>
-          <x>1531</x>
-          <y>266</y>
+          <x>1701</x>
+          <y>276</y>
         </point>
       </line>
     </relationView>
@@ -744,19 +746,19 @@
       <line>
         <point>
           <x>1901</x>
-          <y>371</y>
+          <y>391</y>
         </point>
         <point>
           <x>1901</x>
           <y>321</y>
         </point>
         <point>
-          <x>1531</x>
+          <x>1701</x>
           <y>321</y>
         </point>
         <point>
-          <x>1531</x>
-          <y>266</y>
+          <x>1701</x>
+          <y>276</y>
         </point>
       </line>
     </relationView>
@@ -764,7 +766,7 @@
       <line>
         <point>
           <x>871</x>
-          <y>346</y>
+          <y>376</y>
         </point>
         <point>
           <x>871</x>
@@ -787,7 +789,7 @@
       </labelAssociation>
       <roleAssociation>
         <x>875</x>
-        <y>350</y>
+        <y>380</y>
         <w>0</w>
         <h>17</h>
       </roleAssociation>
@@ -799,7 +801,7 @@
       </roleAssociation>
       <multipliciteAssociation>
         <x>857</x>
-        <y>350</y>
+        <y>380</y>
         <w>8</w>
         <h>17</h>
       </multipliciteAssociation>
@@ -814,19 +816,19 @@
       <line>
         <point>
           <x>1831</x>
-          <y>521</y>
+          <y>541</y>
         </point>
         <point>
           <x>1831</x>
-          <y>511</y>
+          <y>521</y>
         </point>
         <point>
-          <x>2011</x>
-          <y>511</y>
+          <x>2001</x>
+          <y>521</y>
         </point>
         <point>
-          <x>2011</x>
-          <y>471</y>
+          <x>2001</x>
+          <y>491</y>
         </point>
       </line>
     </relationView>
@@ -834,19 +836,19 @@
       <line>
         <point>
           <x>2191</x>
-          <y>521</y>
+          <y>541</y>
         </point>
         <point>
           <x>2191</x>
-          <y>511</y>
+          <y>521</y>
         </point>
         <point>
-          <x>2011</x>
-          <y>511</y>
+          <x>2001</x>
+          <y>521</y>
         </point>
         <point>
-          <x>2011</x>
-          <y>471</y>
+          <x>2001</x>
+          <y>491</y>
         </point>
       </line>
     </relationView>
@@ -876,8 +878,8 @@
     </componentView>
     <componentView color="-2079" componentID="25660" displayAttributes="true" displayDefault="true" displayMethods="true">
       <geometry>
-        <x>1290</x>
-        <y>120</y>
+        <x>1460</x>
+        <y>130</y>
         <w>400</w>
         <h>145</h>
       </geometry>
@@ -887,21 +889,21 @@
         <x>810</x>
         <y>110</y>
         <w>330</w>
-        <h>235</h>
+        <h>265</h>
       </geometry>
     </componentView>
     <componentView color="-2079" componentID="25840" displayAttributes="true" displayDefault="true" displayMethods="true">
       <geometry>
-        <x>1810</x>
-        <y>370</y>
+        <x>1800</x>
+        <y>390</y>
         <w>400</w>
         <h>100</h>
       </geometry>
     </componentView>
     <componentView color="-2079" componentID="25854" displayAttributes="true" displayDefault="true" displayMethods="true">
       <geometry>
-        <x>1100</x>
-        <y>360</y>
+        <x>1140</x>
+        <y>390</y>
         <w>520</w>
         <h>100</h>
       </geometry>
@@ -909,7 +911,7 @@
     <componentView color="-2079" componentID="26215" displayAttributes="true" displayDefault="true" displayMethods="true">
       <geometry>
         <x>1730</x>
-        <y>520</y>
+        <y>540</y>
         <w>200</w>
         <h>70</h>
       </geometry>
@@ -917,7 +919,7 @@
     <componentView color="-2079" componentID="26216" displayAttributes="true" displayDefault="true" displayMethods="true">
       <geometry>
         <x>1990</x>
-        <y>520</y>
+        <y>540</y>
         <w>400</w>
         <h>100</h>
       </geometry>
@@ -925,7 +927,7 @@
     <componentView color="-2079" componentID="76675" displayAttributes="true" displayDefault="true" displayMethods="true">
       <geometry>
         <x>770</x>
-        <y>480</y>
+        <y>500</y>
         <w>410</w>
         <h>325</h>
       </geometry>
