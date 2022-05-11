@@ -12,12 +12,28 @@
 class Person {
 public:
     /**
-     * @brief returns if the person is allowed to drive the boat.
-    */
+     * Method to know if a person can drive the boat
+     * @return bool
+     */
     virtual bool canDrive() const = 0;
+
+    /**
+     * Method to get the name
+     * @return
+     */
     std::string getName() const;
+
+    /**
+     * Method to know if a person can be with others
+     * @param people
+     * @return bool
+     */
     virtual bool canBeWith(const std::list<const Person *> &people) const = 0;
 protected:
+   /**
+    * Constructor
+    * @param name
+    */
     Person(const std::string &name);
 private:
     std::string name;

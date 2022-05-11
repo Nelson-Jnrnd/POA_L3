@@ -1,7 +1,3 @@
-//
-// Created by NelsonWork on 11.05.2022.
-//
-
 #ifndef POA_L3_THIEF_HPP
 #define POA_L3_THIEF_HPP
 
@@ -13,14 +9,30 @@
  * @version 1.0
  * @date 11.05.2022
  * @author Nelson Jeanrenaud
- * @author 
+ * @author André Marques Nora
  */
 class Thief : public Adult {
 public:
-    Thief(const std::string &name, const Policeman *policemanWatching);
 
-    bool canDrive() const override;
-    bool canBeWith(const std::list<const Person *> &people) const override;
+   /**
+    * Constructor
+    * @param name
+    * @param policemanWatching Policeman watching over the thief
+    */
+   Thief(const std::string &name, const Policeman *policemanWatching);
+
+   /**
+    * Method to know if the thief can drive
+    * @return False
+    */
+   bool canDrive() const override;
+
+   /**
+    * Method to know if the thief can be with other people
+    * @param people
+    * @return Bool
+    */
+   bool canBeWith(const std::list<const Person *> &people) const override;
 private:
     const Policeman *policemanWatching;
 };

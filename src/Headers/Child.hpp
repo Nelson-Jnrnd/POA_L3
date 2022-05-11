@@ -1,10 +1,5 @@
-//
-// Created by NelsonWork on 04.05.2022.
-//
-
 #ifndef POA_L3_CHILD_HPP
 #define POA_L3_CHILD_HPP
-
 
 #include "Person.hpp"
 #include "Adult.hpp"
@@ -15,7 +10,7 @@ class Adult;
  * @version 1.0
  * @date 04.05.2022
  * @author Nelson Jeanrenaud
- * @author 
+ * @author André Marques Nora
  */
 class Child : public Person {
 public:
