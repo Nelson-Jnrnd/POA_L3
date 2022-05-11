@@ -19,7 +19,7 @@ const char ConsoleInterface::RIVER_CHAR = '=';
 
 
 void ConsoleInterface::playGame(istream &input, ostream &output) {
-    Controller controller;
+    Controller* controller = new Controller();
 
     output << "Welcome to the game!" << std::endl;
     printHelp(output);
@@ -37,20 +37,20 @@ void ConsoleInterface::playGame(istream &input, ostream &output) {
         switch (command) {
             case DISPLAY_CHAR:
                 printLine(output);
-                printContainer(output, controller.getLeftBank());
+                printContainer(output, controller->getLeftBank());
                 printLine(output);
-                if (&controller.getBoat().getPosition() ==
-                    &controller.getLeftBank()) { // TODO: changer pour pas avoir a faire ce if
-                    printContainer(output, controller.getBoat());
+                if (&controller->getBoat().getPosition() ==
+                    &controller->getLeftBank()) { // TODO: changer pour pas avoir a faire ce if
+                    printContainer(output, controller->getBoat());
                     printRiver(output);
                     output << std::endl;
                 } else {
                     output << std::endl;
                     printRiver(output);
-                    printContainer(output, controller.getBoat());
+                    printContainer(output, controller->getBoat());
                 }
                 printLine(output);
-                printContainer(output, controller.getRightBank());
+                printContainer(output, controller->getRightBank());
                 printLine(output);
                 break;
             case EMBARK_CHAR:
@@ -59,7 +59,7 @@ void ConsoleInterface::playGame(istream &input, ostream &output) {
                     output << "No name given" << std::endl;
                 name = inputString.substr(2);
                 try {
-                    controller.embark(name);
+                    controller->embark(name);
                 } catch (const std::invalid_argument &e) {
                     output << "Invalid command : " << e.what() << std::endl; // TODO custom exception ?
                 }
@@ -70,20 +70,23 @@ void ConsoleInterface::playGame(istream &input, ostream &output) {
                     output << "No name given" << std::endl;
                 name = inputString.substr(2);
                 try {
-                    controller.disembark(name);
+                    controller->disembark(name);
                 } catch (const std::invalid_argument &e) {
                     output << "Invalid command : " << e.what() << std::endl;
                 }
                 break;
             case MOVE_BOAT_CHAR:
                 output << "Moving boat..." << std::endl;
-                controller.moveBoat();
+                controller->moveBoat();
                 break;
             case RESET_CHAR:
                 output << "Resetting..." << std::endl;
+                delete controller;
+                controller = new Controller();
                 break;
             case QUIT_CHAR:
                 output << "Quitting..." << std::endl;
+                delete controller;
                 return;
             case MENU_CHAR:
                 printHelp(output);
@@ -93,7 +96,6 @@ void ConsoleInterface::playGame(istream &input, ostream &output) {
                 break;
         }
     }
-
 }
 
 void ConsoleInterface::printHelp(ostream &output) {

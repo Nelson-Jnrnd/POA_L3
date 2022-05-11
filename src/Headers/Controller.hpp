@@ -20,6 +20,11 @@ public:
     Controller();
 
     /**
+     * Destructor
+     */
+    ~Controller();
+
+    /**
      * Method to embark a person given the name
      * @param name of the person
      * @throw Error if doesn't respect rules
@@ -62,10 +67,6 @@ private:
     Bank* leftBank;
     Bank* rightBank;
 
-    /**
-     * Initialize the game by destroying all previous data and creating new ones
-     */
-    void initGame();
 
     /**
      * Method to find a person given the name

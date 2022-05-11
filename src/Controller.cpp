@@ -10,7 +10,6 @@ using std::cout;
 using std::find;
 
 Controller::Controller() {
-
     Adult* mother = new Adult("mother");
     Adult* father = new Adult("father");
     Policeman* policeman = new Policeman("policeman");
@@ -26,11 +25,6 @@ Controller::Controller() {
     leftBank = new Bank("leftBank", peopleInGame);
     rightBank = new Bank("rightBank");
     boat = new Boat("boat", *leftBank);
-}
-
-
-void Controller::initGame() {
-
 }
 
 
@@ -127,6 +121,16 @@ const Bank &Controller::getLeftBank() const {
 
 const Bank &Controller::getRightBank() const {
     return *rightBank;
+}
+
+Controller::~Controller() {
+    delete leftBank;
+    delete rightBank;
+    delete boat;
+
+    for (auto it: peopleInGame) {
+        delete it;
+    }
 }
 
 
