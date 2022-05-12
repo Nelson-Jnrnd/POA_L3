@@ -28,27 +28,12 @@ Controller::Controller() {
     boat = new Boat("boat", *leftBank);
 }
 
-
 void Controller::embark(const std::string &name) {
-    const Person *personToMove = findPerson(name);
-
-    if (personToMove == nullptr) {
-        throw std::invalid_argument("Person not found");
-    } else {
-        embark(*personToMove);
-        turnCount++;
-    }
+   Controller::movePerson(name, embark);
 }
 
 void Controller::disembark(const std::string &name) {
-    const Person *personToMove = findPerson(name);
-
-    if (personToMove == nullptr) {
-        throw std::invalid_argument("Person not found");
-    } else {
-        disembark(*personToMove);
-        turnCount++;
-    }
+   Controller::movePerson(name, disembark);
 }
 
 void Controller::moveBoat() {
@@ -140,6 +125,17 @@ Controller::~Controller() {
 
 unsigned int Controller::getTurnCount() const {
     return turnCount;
+}
+
+void movePerson(const std::string &name, void (*function)(const Person&)){
+   const Person *personToMove = findPerson(name);
+
+   if (personToMove == nullptr) {
+      throw std::invalid_argument("Person not found");
+   } else {
+      function(*personToMove);
+      turnCount++;
+   }
 }
 
 
