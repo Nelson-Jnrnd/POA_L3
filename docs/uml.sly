@@ -238,10 +238,10 @@
       <method isAbstract="false" isStatic="false" name="const_getBank" returnType="Bank*" view="DEFAULT" visibility="PRIVATE">
         <variable const="false" name="person" type="const_Person&amp;"/>
       </method>
-      <method isAbstract="false" isStatic="false" name="embark" returnType="void" view="DEFAULT" visibility="PRIVATE">
+      <method isAbstract="false" isStatic="false" name="embarkPerson" returnType="void" view="DEFAULT" visibility="PRIVATE">
         <variable const="false" name="person" type="const_Person&amp;"/>
       </method>
-      <method isAbstract="false" isStatic="false" name="disembark" returnType="void" view="DEFAULT" visibility="PRIVATE">
+      <method isAbstract="false" isStatic="false" name="disembarkPerson" returnType="void" view="DEFAULT" visibility="PRIVATE">
         <variable const="false" name="person" type="const_Person&amp;"/>
       </method>
       <method isAbstract="false" isStatic="false" name="const_getTurnCount" returnType="unsigned" view="DEFAULT" visibility="PUBLIC"/>
