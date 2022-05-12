@@ -241,6 +241,10 @@
         <variable const="false" name="person" type="const_Person&amp;"/>
       </method>
       <method isAbstract="false" isStatic="false" name="const_getTurnCount" returnType="unsigned" view="DEFAULT" visibility="PUBLIC"/>
+      <method isAbstract="false" isStatic="false" name="movePerson" returnType="void" view="DEFAULT" visibility="PRIVATE">
+        <variable const="false" name="name" type="const_string&amp;"/>
+        <variable const="false" name="function" type="*void_const_Person&amp;"/>
+      </method>
     </entity>
     <entity entityType="CLASS" id="25840" isAbstract="false" name="Adult" visibility="PUBLIC">
       <method is-constructor="true" isAbstract="false" isStatic="false" name="Adult" returnType="" view="DEFAULT" visibility="PUBLIC"/>
@@ -900,8 +904,8 @@
       <geometry>
         <x>810</x>
         <y>550</y>
-        <w>400</w>
-        <h>265</h>
+        <w>460</w>
+        <h>280</h>
       </geometry>
     </componentView>
     <componentView color="-2079" componentID="25660" displayAttributes="true" displayDefault="true" displayMethods="true">
@@ -936,5 +940,13 @@
         <h>220</h>
       </geometry>
     </componentView>
+    <note color="-2079" content="movePerson prend en paramètre un pointeur sur une fonction qui retourne void et avec comme paramètre une référence vers une Person constante">
+      <noteGeometry>
+        <x>1300</x>
+        <y>710</y>
+        <w>310</w>
+        <h>60</h>
+      </noteGeometry>
+    </note>
   </umlView>
 </classDiagram>
