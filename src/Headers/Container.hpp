@@ -82,6 +82,7 @@ protected:
 private:
    const std::string NAME;
    std::list<const Person*> peopleInContainer;
+
 };
 
 #endif //POA_L3_CONTAINER_HPP

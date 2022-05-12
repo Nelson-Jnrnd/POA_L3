@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="iso-8859-15" standalone="no"?>
 <classDiagram>
   <diagramElements defaultViewEntities="ALL" defaultViewEnum="true" defaultViewMethods="TYPE_AND_NAME" defaultVisibleTypes="true" informations="" name="Rivière">
+    <entity entityType="ENUM" id="89558" name="MoveType">
+      <EnumValue>EMBARK</EnumValue>
+      <EnumValue>DISEMBARK</EnumValue>
+    </entity>
     <association aggregation="NONE" direction="FIRST_TO_SECOND" id="89247" name="rightBank">
       <role componentId="25703" name="" visibility="PRIVATE">
         <multiplicity>
@@ -241,9 +245,9 @@
         <variable const="false" name="person" type="const_Person&amp;"/>
       </method>
       <method isAbstract="false" isStatic="false" name="const_getTurnCount" returnType="unsigned" view="DEFAULT" visibility="PUBLIC"/>
-      <method isAbstract="false" isStatic="false" name="movePerson" returnType="void" view="DEFAULT" visibility="PRIVATE">
+      <method isAbstract="false" isStatic="false" name="doMove" returnType="void" view="DEFAULT" visibility="PRIVATE">
         <variable const="false" name="name" type="const_string&amp;"/>
-        <variable const="false" name="function" type="*void_const_Person&amp;"/>
+        <variable const="false" name="moveType" type="MoveType"/>
       </method>
     </entity>
     <entity entityType="CLASS" id="25840" isAbstract="false" name="Adult" visibility="PUBLIC">
@@ -940,13 +944,13 @@
         <h>220</h>
       </geometry>
     </componentView>
-    <note color="-2079" content="movePerson prend en paramètre un pointeur sur une fonction qui retourne void et avec comme paramètre une référence vers une Person constante">
-      <noteGeometry>
-        <x>1300</x>
-        <y>710</y>
-        <w>310</w>
-        <h>60</h>
-      </noteGeometry>
-    </note>
+    <componentView color="-2079" componentID="89558" enumValuesVisible="DEFAULT">
+      <geometry>
+        <x>620</x>
+        <y>720</y>
+        <w>150</w>
+        <h>89</h>
+      </geometry>
+    </componentView>
   </umlView>
 </classDiagram>

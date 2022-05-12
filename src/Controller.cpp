@@ -29,11 +29,11 @@ Controller::Controller() {
 }
 
 void Controller::embark(const std::string &name) {
-   Controller::movePerson(name, embark);
+    doMove(MoveType::EMBARK, name);
 }
 
 void Controller::disembark(const std::string &name) {
-   Controller::movePerson(name, disembark);
+    doMove(MoveType::DISEMBARK, name);
 }
 
 void Controller::moveBoat() {
@@ -51,7 +51,7 @@ Bank *Controller::getBank(const Person &person) const{
     }
 }
 
-void Controller::embark(const Person &person) {
+void Controller::embarkPerson(const Person &person) {
     Bank *bank = getBank(person);
     if (bank != nullptr) {
         if (&boat->getPosition() == bank) {
@@ -73,7 +73,7 @@ void Controller::embark(const Person &person) {
     }
 }
 
-void Controller::disembark(const Person &person) {
+void Controller::disembarkPerson(const Person &person) {
     if (boat->isHere(person)) {
         Bank &location = boat->getPosition();
         Response boatResponse = boat->canLeave(person);
@@ -127,15 +127,23 @@ unsigned int Controller::getTurnCount() const {
     return turnCount;
 }
 
-void movePerson(const std::string &name, void (*function)(const Person&)){
-   const Person *personToMove = findPerson(name);
 
-   if (personToMove == nullptr) {
-      throw std::invalid_argument("Person not found");
-   } else {
-      function(*personToMove);
-      turnCount++;
-   }
+void Controller::doMove(Controller::MoveType moveType, const std::string &name) {
+    const Person *personToMove = findPerson(name);
+
+    if (personToMove == nullptr) {
+        throw std::invalid_argument("Person not found");
+    } else {
+        switch (moveType) {
+            case MoveType::EMBARK:
+                this->embarkPerson(*personToMove);
+                break;
+            case MoveType::DISEMBARK:
+                this->disembarkPerson(*personToMove);
+                break;
+        }
+        turnCount++;
+    }
 }
 
 

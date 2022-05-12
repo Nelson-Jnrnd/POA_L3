@@ -104,8 +104,8 @@ void ConsoleInterface::printHelp(ostream &output) {
     output << "Help:" << endl;
     output << "You can use the following commands:" << endl;
     output << DISPLAY_CHAR << ": display the current state of the game" << endl;
-    output << EMBARK_CHAR << ": embark on a ship" << endl;
-    output << DISEMBARK_CHAR << ": disembark from a ship" << endl;
+    output << EMBARK_CHAR << ": embarkPerson on a ship" << endl;
+    output << DISEMBARK_CHAR << ": disembarkPerson from a ship" << endl;
     output << RESET_CHAR << ": reset the game" << endl;
     output << QUIT_CHAR << ": quit the game" << endl;
     output << MENU_CHAR << ": display the menu" << endl;

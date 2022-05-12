@@ -25,14 +25,14 @@ public:
     ~Controller();
 
     /**
-     * Method to embark a person given the name
+     * Method to embarkPerson a person given the name
      * @param name of the person
      * @throw Error if doesn't respect rules
      */
     void embark(const std::string& name);
 
     /**
-     * Method to disembark a person given the name
+     * Method to disembarkPerson a person given the name
      * @param name of the person
      * @throw Error if doesn't respect rules
      */
@@ -67,6 +67,11 @@ public:
      */
     unsigned int getTurnCount() const;
 private:
+    /**
+     * Type of way we can move a person
+     */
+    enum class MoveType {EMBARK, DISEMBARK};
+
     unsigned int turnCount;
 
     std::list<const Person*> peopleInGame;
@@ -74,6 +79,12 @@ private:
     Bank* leftBank;
     Bank* rightBank;
 
+    /**
+     * Move a person depending on the moveType
+     * @param moveType way we move a person
+     * @param name person to move
+     */
+    void doMove(MoveType moveType, const std::string& name);
 
     /**
      * Method to find a person given the name
@@ -90,26 +101,19 @@ private:
     Bank* getBank(const Person& person) const;
 
     /**
-     * Second Method to embark giving the Person directly
+     * Second Method to embarkPerson giving the Person directly
      * @param person
      * @throw Error if doesn't respect rules
      */
-    void embark(const Person& person);
+    void embarkPerson(const Person& person);
 
    /**
-    * Second Method to disembark giving the Person directly
+    * Second Method to disembarkPerson giving the Person directly
     * @param person
     * @throw Error if doesn't respect rules
     */
-    void disembark(const Person& person);
+    void disembarkPerson(const Person& person);
 
-    /**
-     * Function to move a person
-     * @param name
-     * @param function to embark or disembark
-     * @throw Error if person doesn't exist
-     */
-    void movePerson(const std::string &name, void (*function)(const Person&));
 };
 
 #endif //POA_L3_CONTROLLER_HPP
