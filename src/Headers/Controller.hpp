@@ -24,6 +24,10 @@ public:
      */
     ~Controller();
 
+    // Remove copy constructor and assignment operator
+    Controller(const Controller&) = delete;
+    Controller& operator=(const Controller&) = delete;
+
     /**
      * Method to embarkPerson a person given the name
      * @param name of the person
