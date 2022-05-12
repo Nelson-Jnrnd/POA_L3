@@ -102,6 +102,14 @@ private:
     * @throw Error if doesn't respect rules
     */
     void disembark(const Person& person);
+
+    /**
+     * Function to move a person
+     * @param name
+     * @param function to embark or disembark
+     * @throw Error if person doesn't exist
+     */
+    void movePerson(const std::string &name, void (*function)(const Person&));
 };
 
 #endif //POA_L3_CONTROLLER_HPP
